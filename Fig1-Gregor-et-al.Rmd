@@ -1,0 +1,417 @@
+---
+title: "Figure 1 Gregor et al"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+The following is the code to create the figures in the paper "Mammalian gut metabolomes mirror microbiome composition and host phylogeny"
+
+Load packages
+```{r}
+
+library(phyloseq)
+library(vegan)
+library(ggplot2)
+library(dplyr)
+library(reshape2)
+library(tidyr)
+```
+
+Load phyloseq objects and metadata
+
+```{r}
+#metadata
+metadata <- read.delim("metadata.txt", header = T, sep = "") ## load metadata file
+metadata <-subset(metadata, Type=="Feces")
+metadata <- droplevels(metadata)
+
+
+#16S sequencing results
+ps_asv <- readRDS("Phyloseq_files/ps_asv.rds")
+
+#LC-MS/MS metabolomics data (fecal samples, filtered to ~10k fecal peaks)
+ps_pol <- readRDS("Phyloseq_files/ps_pol.rds")
+
+#GC-MS metabolomics data (fecal samples)
+ps_gcms <- readRDS("Phyloseq_files/ps_gcms.rds")
+
+# PICRUSt data
+ps_picrust <- readRDS("Phyloseq_files/ps_picrust.rds")
+
+##Additional files
+#LC-MS/MS metabolomics data, all samples and peaks
+#ps_polar_all <- readRDS("Phyloseq_files/ps_polar_all.rds")
+ 
+#GC-MS data, all samples
+#ps_gcms_all <- readRDS("Phyloseq_files/ps_gcms_all.rds")
+```
+
+
+
+##Figure 1A- PCoAs
+
+Create palettes for color (mammalian order) and shape (diet) (colors are from Okabe Ito scale)
+```{r}
+colorlist <- c(
+  "#0072B2", #Artiodactyla
+  "#CC79A7", #Carnivora
+  "#009E73", #Perissodactyla
+  "#F0E442", #Primates
+  "#56B4E9" #Proboscidea
+)
+
+shapelist <- c(
+  15, #Carnivores
+  16,  # Herbivores
+  17  #Omnivores
+  )
+```
+
+PCoA analysis  
+```{r}
+
+#Choose a phyloseq object to work with: ps_gcms, ps_asv, or ps_pol
+ps <- ps_asv
+
+#Apply Bray Curtis ordination
+
+ps.ord <- ordinate(ps, "PCoA", "bray")
+
+#Or, apply alternate ordinations as shown in the SI
+#ps.ord <- ordinate(ps, "PCoA", "euclidean")
+#ps.ord <- ordinate(ps, "PCoA", "jaccard", binary=TRUE)
+#ps.ord <- ordinate(ps, "PCoA", "wunifrac") ##16S only
+#ps.ord <- ordinate(ps, "PCoA", "unifrac") ##16S only
+
+##Examine eigenvalues
+plot_ordination(ps, ps.ord, type= "scree")
+
+##Create list of eigenvalues to normalize the axes
+evals <- ps.ord$values[,1]
+```
+Make the plot object with ggplot2
+```{r}
+p <- plot_ordination(ps, ps.ord, color = "HostOrder", shape= "diet", title= "PCoA") 
+
+p_final <- p + 
+  coord_fixed(sqrt(evals[2] / evals[1])) +
+  theme_bw(base_size=15)+
+  theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank())+
+  scale_color_manual(values=colorlist) +
+  scale_shape_manual(values=shapelist)+
+  geom_point(size=5)
+p_final
+
+```
+
+
+##Figure 1B- Trees
+
+Setup. This code closely follows examples laid out in the dendextend vignettes: https://cran.r-project.org/web/packages/dendextend/vignettes/dendextend.html#comparing-two-dendrograms
+
+```{r}
+library(ape)
+library(dendextend)
+
+```
+For species with multiple individuals, we took the median values using dplyr to create a representative sample for the tree
+
+```{r}
+
+##Choose which phyloseq object to analyze (ps_gcms, ps_pol, ps_asv)
+##eg 16S (ps_asv)
+ps <- ps_asv
+
+##The melting step is slow for large files, be patient
+ps.m <- psmelt(ps)
+
+ps.m <- ps.m %>% group_by(OTU, HostSpecies_taxonomy) %>% summarise_at(vars(Abundance), median, na.rm=TRUE)
+
+#Reshape from long to wide format (unmelt)
+m <- spread(ps.m, key= OTU, value= Abundance)
+
+#give it rownames
+m2 <- as.matrix(m[, -1])
+rownames(m2) <- m$HostSpecies_taxonomy
+
+##save median values as a new object: gcms_med, pol_med, asv_med
+ps_med <- m2
+
+
+
+```
+
+
+Create the trees from the median data.
+
+```{r}
+##Cluster the median data
+hclust.ps <- hclust(vegdist(ps_med, method = "bray"), method="ward.D2")
+
+##Import host phylogeny
+phylo_hosts <-read.tree(file="species.nwk")
+
+##Convert to dendrograms for dendextend
+
+dend_host <- as.dendrogram(phylo_hosts)
+dend_ps <- as.dendrogram(hclust.ps)
+```
+
+Make each tanglegram by pairing dend_host with the tree from each dataset. Colored lines highlight subtrees present in both.
+```{r}
+##make a dendlist with the two dendrograms to compare: eg host phylogeny and 16S
+dendlist <- dendlist(dend_host, dend_ps)
+
+tanglegram(dendlist, sort=T, main_left = "Host phylogeny", main_right = "16S", common_subtrees_color_branches = FALSE, lwd=1, lab.cex= 1, margin_inner = 7, main="", columns_width= c(5,1,5), highlight_branches_lwd=FALSE, highlight_distinct_edges=FALSE)
+
+
+#How is the entanglement (quality of alignment, lower is better)?
+dendlist %>% entanglement
+
+#Correlation
+
+cor.dendlist(dendlist, method_coef = "pearson")
+```
+
+Since the observations creating the Baker's Gamma Index of such a measure are correlated, we need to perform a permutation test for the calculation of the statistical significance of the index. We will look at the distribution of Baker's Gamma Index under the null hypothesis (assuming fixed tree topologies). This will be different for different tree structures and sizes. Here are the results when the compared tree is compared to itself after shuffling its own labels (the_cor, correlation of 1), and when comparing tree 1 to the shuffled tree 2 (the_cor2):
+```{r}
+set.seed(42)
+the_cor <- cor_bakers_gamma(dend_ps, dend_ps)
+the_cor2 <- cor_bakers_gamma(dend_ps, dend_host)
+the_cor
+the_cor2
+```
+
+Create the null model.
+```{r}
+dend_mixed <- dend_ps
+
+R <- 1000
+cor_bakers_gamma_results <- numeric(R)
+
+
+for(i in 1:R) {
+   dend_mixed <- sample.dendrogram(dend_mixed, replace = FALSE)
+   cor_bakers_gamma_results[i] <- cor_bakers_gamma(dend_host, dend_mixed)
+}
+
+##Create plot to show results
+plot(density(cor_bakers_gamma_results),
+     main = "16S to host phylogeny, Baker's gamma distribution under H0",
+     xlim = c(-1,1))
+abline(v = 0, lty = 2)
+abline(v = the_cor, lty = 2, col = 2)
+abline(v = the_cor2, lty = 2, col = 4)
+legend("topleft", legend = c("16S to itself", "16S to host phylogeny"), fill = c(2,4))
+round(sum(the_cor2 < cor_bakers_gamma_results)/ R, 4)
+
+title(sub = paste("One sided p-value:",
+                  "to itself =",  round(sum(the_cor < cor_bakers_gamma_results)/ R, 4),
+                  " ; to host phylogeny tree =",  round(sum(the_cor2 < cor_bakers_gamma_results)/ R, 4)
+                  ))
+```
+
+
+##Fig 1C- Comparison of beta dissimilarity for each dataset
+
+Examine overall distances in different datasets 
+
+```{r}
+##Create function to compare distances, based on a function written by Jeff Kimbrel: https://jeffkimbrel.github.io/
+
+allDistances = function(p = ps) {
+
+dist = phyloseq::distance(p, method = "bray")
+dist.m = melt(as.matrix(dist))
+# remove self-comparisons
+  dist.m = dist.m %>%
+    filter(as.character(Var1) != as.character(Var2)) %>%
+    mutate_if(is.factor,as.character)
+  #make names of comparisons and sort
+  dist.m$name <- paste0(dist.m[,1],"_",dist.m[,2])
+   dist.m <-dist.m[order(dist.m[,4]),]
+
+}
+##Perform on all relevant datasets
+
+dis_asv <- allDistances(p= ps_asv)
+dis_pol <- allDistances(p= ps_pol)
+dis_gcms <- allDistances(p= ps_gcms)
+dis_pic <- allDistances(p= ps_picrust)
+
+##Merge into single dataframe
+  dis <- data.frame(dis_asv[,4], dis_asv[,1], dis_asv[,3], dis_pic[,3], dis_pol[,3], dis_gcms[,3])
+  colnames(dis) <-c("pair", "animal_1", "Bacterial composition (16S)", "PICRUSt2", "LC-MS", "GC-MS")
+  
+
+##Melt dataframe
+  dis.melt <- melt(dis, id= c("pair", "animal_1"))
+  colnames(dis.melt) <- c("pair", "animal_1", "data_type", "Distance")
+   
+  
+  
+# Plot the data as boxplots. First use rev to reverse the order of the factor levels.
+  dis.melt$data_type <- factor(dis.melt$data_type, levels=rev(levels(dis.melt$data_type)))
+  ggplot(data=dis.melt, aes(x=data_type, y=Distance)) +
+    theme_bw(base_size=15) +
+    geom_boxplot(outlier.shape = NA, fill=NA, size=1) +
+    labs(title= "Beta diversity by method", x = "", y = "Dissimilarity")+
+    ylim(0,1)+
+    coord_flip()
+
+```
+Calculate adjusted p-values using one-way ANOVA analysis followed by Tukey’s test
+```{r}
+# Compute the analysis of variance
+res.aov <- aov(dis.melt$Distance ~ dis.melt$data_type)
+# Summary of the analysis
+summary(res.aov)
+#Tukey's test
+TukeyHSD(res.aov) 
+```
+
+
+
+
+##Mantel and Permanova analyses
+
+PERMANOVA analysis
+
+```{r}
+set.seed(42)
+
+##Pick a dataset: ps_asv, ps_gcms, ps_pol
+ps <- ps_asv
+
+# Calculate dissimilarity matrix
+dis <- phyloseq::distance(ps, method = "bray")
+
+# Adonis test
+adonis(dis ~ diet+digestive_strategy+HostOrder+HostSpecies+collection_time, data = metadata)
+
+```
+
+
+For subsets analysis:
+
+```{r}
+set.seed(42)
+
+##choose a dataset: ps_asv, ps_pol, ps_gcms
+ps <- ps_asv
+data <- as(otu_table(ps), "matrix")
+```
+
+Create one of the relevant subsets:
+```{r}
+
+
+#n=2 (change filters accordingly for n=3, 4, 5)
+set.seed(42)
+metadata2 <-bind_rows(
+  data.frame(metadata) %>%
+    group_by(HostSpecies) %>%
+    filter(n()>1) %>%
+    sample_n(size =2),
+  data.frame(metadata) %>%
+    group_by(HostSpecies) %>%
+    filter(n()==1))
+  
+##Special cases for n=1:
+
+#n=1
+#set.seed(42)
+#metadata2 <-    data.frame(metadata) %>%
+  #group_by(HostSpecies) %>% 
+  #sample_n(size =1) 
+
+
+#Or, n=1 with median values
+#ps.m <- ps.m %>% 
+ # group_by(OTU, HostSpecies_taxonomy) %>% 
+  #summarise_at(vars(Abundance), median, na.rm=TRUE)
+```
+
+Select the subset of samples from the data and run PERMANOVA test again
+
+```{r}
+##trim data to match subsetted samples
+subset_n <- data[rownames(data) %in% metadata2$sample_name,]
+
+##remove empty columns
+subset_n <- subset_n[,colSums(subset_n)>0]
+dim(subset_n)
+
+#make distance matrix
+dis <- vegdist(subset_n, method="bray")
+
+
+adonis(dis ~ diet+digestive_strategy+HostOrder+HostSpecies+collection_time, data = metadata2)
+```
+
+Analysis for samples for which sex was recorded (Table S4)
+```{r}
+##Choose a dataset: ps_asv, ps_pol, ps_gcms
+
+ps <- ps_pol
+
+#first remove samples for which sex was not recorded
+metadata2 <-subset(metadata, Sex=="F"|Sex=="M")
+
+ps <- prune_samples(metadata2$sample_name, ps)
+
+dis <- phyloseq::distance(ps, method = "bray")
+
+adonis(dis ~ diet+digestive_strategy+HostOrder+HostSpecies+Sex+collection_time, data = metadata2)
+```
+
+Mantel correlations
+
+```{r}
+
+dis_pol <- phyloseq::distance(ps_pol, method = "bray")
+dis_gcms <- phyloseq::distance(ps_gcms, method = "bray")
+dis_asv <- phyloseq::distance(ps_asv, method = "bray")
+
+#Note: check order of samples matches
+#match(attr(dis_asv,"Labels"),attr(dis_gcms,"Labels"))
+#match(attr(dis_asv,"Labels"),attr(dis_pol,"Labels"))
+
+#Perform Mantel test to compare datasets
+mantel(dis_asv, dis_gcms, method="pearson", permutations = 9999)
+
+mantel(dis_asv, dis_pol, method="pearson", permutations = 9999)
+
+mantel(dis_pol, dis_gcms, method="pearson", permutations = 9999)
+
+##Function to subset data as in SI (or, use one of the subsets above)
+#ps_asv_subset <- subset_samples(ps_asv, HostSpecies=="Rhino")
+
+
+
+```
+
+Or, for subsets, first generate metadata2 as in the PERMANOVA test above for the sample subset of interest 
+```{r}
+asv <- as(otu_table(ps_asv), "matrix")
+gcms <- as(otu_table(ps_gcms), "matrix")
+pol <- as(otu_table(ps_pol), "matrix")
+
+##trim data accordingly
+asv <- asv[rownames(asv) %in% metadata2$sample_name,]
+pol <- pol[rownames(pol) %in% metadata2$sample_name,]
+gcms <- gcms[rownames(gcms) %in% metadata2$sample_name,]
+
+##remove empties
+asv <- asv[,colSums(asv) >0]
+pol <- pol[,colSums(pol) >0]
+gcms <- gcms[,colSums(gcms) >0]
+
+#Compare the datasets of interest, eg 16S and GC-MS
+mantel(vegdist(asv), vegdist(gcms), method="pearson", permutations = 9999)
+```
+
+
+
+

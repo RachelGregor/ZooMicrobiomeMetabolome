@@ -1,0 +1,216 @@
+sample_name	diet	digestive_strategy	HostSpecies	HostOrder	HostSpecies_taxonomy	Collected_by	Day	Month	Year	Type	File_polar	Polar_order	File_lipids_neg	File_lipids_pos	Lipids_order	File_VFA	VFA_order	File_GCMS	GCMS_order	File_polar.1	Sex	collection_time
+Af_elephant_1	Herbivores	Hindgut	African_elephant	Proboscidea	Loxodonta_africana	Stav+Ruthie	20	9	2016	Feces	Sample-2C3.mzXML	64	lipids-230718-neg-18.mzXML	lipids-230718-pos-18.mzXML	82	12_26_2018-inj-62	62	2019-01-17-inj-106.mzML	106	Sample-2C3	M	Delayed
+Af_elephant_2	Herbivores	Hindgut	African_elephant	Proboscidea	Loxodonta_africana	Stav+Ruthie	20	9	2016	Feces	Sample-2E7.mzXML	84	lipids-230718-neg-19.mzXML	lipids-230718-pos-19.mzXML	98	12_26_2018-inj-96	96	2019-01-21-inj-137.mzML	137	Sample-2E7	F	Delayed
+Af_elephant_3	Herbivores	Hindgut	African_elephant	Proboscidea	Loxodonta_africana	Stav+Ruthie	20	9	2016	Feces	Sample-1A8.mzXML	5	lipids-230718-neg-20.mzXML	lipids-230718-pos-20.mzXML	50	12_27_2018-inj-128	128	2019-01-14-inj-54.mzML	54	Sample-1A8	F	Delayed
+As_elephant_1	Herbivores	Hindgut	Asian_elephant	Proboscidea	Elephas_maximus	Stav+Ruthie	20	9	2016	Feces	Sample-1D4.mzXML	25	lipids-230718-neg-31.mzXML	lipids-230718-pos-31.mzXML	9	12_25_2018-inj-8	8	2019-01-13-inj-8.mzML	8	Sample-1D4	M	Delayed
+As_elephant_2	Herbivores	Hindgut	Asian_elephant	Proboscidea	Elephas_maximus	Stav+Ruthie	20	9	2016	Feces	Sample-1F8.mzXML	45	lipids-230718-neg-22.mzXML	lipids-230718-pos-22.mzXML	73	12_27_2018-inj-107	107	2019-01-15-inj-78.mzML	78	Sample-1F8	F	Delayed
+As_elephant_3	Herbivores	Hindgut	Asian_elephant	Proboscidea	Elephas_maximus	Stav	23	9	2016	Feces	Sample-2C4.mzXML	65	lipids-230718-neg-23.mzXML	lipids-230718-pos-23.mzXML	44	12_26_2018-inj-53	53	2019-01-14-inj-45.mzML	45	Sample-2C4	F	0-2hr
+As_elephant_4	Herbivores	Hindgut	Asian_elephant	Proboscidea	Elephas_maximus	Stav	23	9	2016	Feces	Sample-2E8.mzXML	85	lipids-230718-neg-24.mzXML	lipids-230718-pos-24.mzXML	111	12_26_2018-inj-76	76	2019-01-23-inj-170.mzML	170	Sample-2E8	F	0-2hr
+As_elephant_5	Herbivores	Hindgut	Asian_elephant	Proboscidea	Elephas_maximus	Stav	23	9	2016	Feces	Sample-1B1.mzXML	6	lipids-230718-neg-25.mzXML	lipids-230718-pos-25.mzXML	20	12_26_2018-inj-21	21	2019-01-13-inj-20.mzML	20	Sample-1B1	F	Delayed
+Black_bear_1	Omnivores	Simplegut	Black_bear	Carnivora	Ursus_thibetanus	Stav+Ruthie	20	9	2016	Feces	Sample-1A6.mzXML	3	lipids-230718-neg-26.mzXML	lipids-230718-pos-26.mzXML	61	12_27_2018-inj-119	119	2019-01-15-inj-67.mzML	67	Sample-1A6	M	0-2hr
+Black_bear_2	Omnivores	Simplegut	Black_bear	Carnivora	Ursus_thibetanus	Stav+Ruthie	20	9	2016	Feces	Sample-1D2.mzXML	23	lipids-230718-neg-27.mzXML	lipids-230718-pos-27.mzXML	34	12_26_2018-inj-33	33	2019-01-14-inj-34.mzML	34	Sample-1D2	F	Delayed
+Brown_bear_1	Omnivores	Simplegut	Brown_bear	Carnivora	Ursus_arctos	Stav	23	9	2016	Feces	Sample-1F6.mzXML	43	lipids-230718-neg-28.mzXML	lipids-230718-pos-28.mzXML	83	12_26_2018-inj-63	63	2019-01-17-inj-107.mzML	107	Sample-1F6	F	Delayed
+Brown_bear_2	Omnivores	Simplegut	Brown_bear	Carnivora	Ursus_arctos	Stav	29	11	2016	Feces	Sample-2C2.mzXML	63	lipids-230718-neg-29.mzXML	lipids-230718-pos-29.mzXML	99	12_26_2018-inj-97	97	2019-01-21-inj-138.mzML	138	Sample-2C2	M	0-2hr
+Brown_bear_3	Omnivores	Simplegut	Brown_bear	Carnivora	Ursus_arctos	Ruthie	1	12	2016	Feces	Sample-2E6.mzXML	83	lipids-230718-neg-30.mzXML	lipids-230718-pos-30.mzXML	51	12_27_2018-inj-129	129	2019-01-15-inj-59.mzML	59	Sample-2E6	F	Delayed
+Brown_bear_4	Omnivores	Simplegut	Brown_bear	Carnivora	Ursus_arctos	Ruthie	1	12	2016	Feces	Sample-1A7.mzXML	4	lipids-230718-neg-41.mzXML	lipids-230718-pos-41.mzXML	10	12_25_2018-inj-9	9	2019-01-13-inj-9.mzML	9	Sample-1A7	F	Delayed
+Brown_bear_5	Omnivores	Simplegut	Brown_bear	Carnivora	Ursus_arctos	Ruthie	1	12	2016	Feces	Sample-1D3.mzXML	24	lipids-230718-neg-32.mzXML	lipids-230718-pos-32.mzXML	74	12_27_2018-inj-108	108	2019-01-15-inj-79.mzML	79	Sample-1D3	F	Delayed
+Capuchin_1	Omnivores	Simplegut	Capuchin	Primates	Cebus_nigrivittatus	Ruthie	28	12	2016	Feces	Sample-X-81.mzXML	98	17-lipids-120918-neg-redo-44.mzXML	18-lipids-120918-pos-redo-44.mzXML	143	12_26_2018-inj-78	78	2019-01-21-inj-129.mzML	129	Sample-X-81	M	Delayed
+Chimpanzee_1	Omnivores	Simplegut	Chimp	Primates	Pan_troglodytes	Ishay	27	12	2016	Feces	Sample-2B3.mzXML	56	lipids-230718-neg-62.mzXML	lipids-230718-pos-62.mzXML	76	12_27_2018-inj-111	111	2019-01-16-inj-86.mzML	86	Sample-2B3	F	Delayed
+Chimpanzee_10	Omnivores	Simplegut	Chimp	Primates	Pan_troglodytes	Ruthie	18	1	2017	Feces	Sample-2D8.mzXML	77	lipids-230718-neg-68.mzXML	lipids-230718-pos-68.mzXML	87	12_26_2018-inj-67	67	2019-01-17-inj-111.mzML	111	Sample-2D8	M	0-2hr
+Chimpanzee_11	Omnivores	Simplegut	Chimp	Primates	Pan_troglodytes	Ruthie	18	1	2017	Feces	Sample-X-76.mzXML	97	lipids-230718-neg-69.mzXML	lipids-230718-pos-69.mzXML	103	12_26_2018-inj-101	101	2019-01-21-inj-142.mzML	142	Sample-X-76	F	0-2hr
+Chimpanzee_12	Omnivores	Simplegut	Chimp	Primates	Pan_troglodytes	Ruthie	25	1	2017	Feces	Sample-1C5.mzXML	18	lipids-230718-neg-70.mzXML	lipids-230718-pos-70.mzXML	55	12_27_2018-inj-133	133	2019-01-17-inj-103.mzML	103	Sample-1C5	F	0-2hr
+Chimpanzee_13	Omnivores	Simplegut	Chimp	Primates	Pan_troglodytes	Ishay	24	1	2017	Feces	Sample-1F1.mzXML	38	lipids-230718-neg-71.mzXML	lipids-230718-pos-71.mzXML	13	12_25_2018-inj-13	13	2019-01-13-inj-13.mzML	13	Sample-1F1	F	0-2hr
+Chimpanzee_4	Omnivores	Simplegut	Chimp	Primates	Pan_troglodytes	Ishay	17	1	2016	Feces	Sample-2D7.mzXML	76	lipids-230718-neg-63.mzXML	lipids-230718-pos-63.mzXML	90	12_26_2018-inj-57	57	2019-01-14-inj-49.mzML	49	Sample-2D7	M	Delayed
+Chimpanzee_5	Omnivores	Simplegut	Chimp	Primates	Pan_troglodytes	Ishay	17	1	2016	Feces	Sample-X-70.mzXML	96	lipids-230718-neg-64.mzXML	lipids-230718-pos-64.mzXML	115	12_26_2018-inj-80	80	2019-01-21-inj-131.mzML	131	Sample-X-70	F	Delayed
+Chimpanzee_6	Omnivores	Simplegut	Chimp	Primates	Pan_troglodytes	Ishay	17	1	2016	Feces	Sample-1C4.mzXML	17	lipids-230718-neg-65.mzXML	lipids-230718-pos-65.mzXML	24	12_26_2018-inj-25	25	2019-01-13-inj-24.mzML	24	Sample-1C4	F	Delayed
+Chimpanzee_7	Omnivores	Simplegut	Chimp	Primates	Pan_troglodytes	Ishay	17	1	2016	Feces	Sample-1E8.mzXML	37	lipids-230718-neg-66.mzXML	lipids-230718-pos-66.mzXML	65	12_27_2018-inj-123	123	2019-01-15-inj-72.mzML	72	Sample-1E8	F	Delayed
+Chimpanzee_9	Omnivores	Simplegut	Chimp	Primates	Pan_troglodytes	Ruthie	18	1	2017	Feces	Sample-2B4.mzXML	57	lipids-230718-neg-67.mzXML	lipids-230718-pos-67.mzXML	38	12_26_2018-inj-37	37	2019-01-14-inj-38.mzML	38	Sample-2B4	F	0-2hr
+Coati_1	Omnivores	Simplegut	Coati	Carnivora	Nasua_nasua	Stav+Ishay	22	11	2016	Feces	Sample-1B2.mzXML	7	lipids-230718-neg-33.mzXML	lipids-230718-pos-33.mzXML	45	12_26_2018-inj-54	54	2019-01-28-inj-209.mzML	209	Sample-1B2	M	Delayed
+Coati_3	Omnivores	Simplegut	Coati	Carnivora	Nasua_nasua	Stav+Ishay	22	11	2016	Feces	Sample-1D6.mzXML	27	lipids-230718-neg-34.mzXML	lipids-230718-pos-34.mzXML	112	12_26_2018-inj-77	77	2019-01-21-inj-128.mzML	128	Sample-1D6	M	Delayed
+Coati_4	Omnivores	Simplegut	Coati	Carnivora	Nasua_nasua	Stav+Ishay	22	11	2016	Feces	Sample-2A2.mzXML	47	lipids-230718-neg-35.mzXML	lipids-230718-pos-35.mzXML	21	12_26_2018-inj-22	22	2019-01-13-inj-21.mzML	21	Sample-2A2	F	Delayed
+Coati_5	Omnivores	Simplegut	Coati	Carnivora	Nasua_nasua	Stav+Ishay	22	11	2016	Feces	Sample-2C6.mzXML	67	lipids-230718-neg-36.mzXML	lipids-230718-pos-36.mzXML	62	12_27_2018-inj-120	120	2019-01-15-inj-68.mzML	68	Sample-2C6	F	0-2hr
+Coati_6	Omnivores	Simplegut	Coati	Carnivora	Nasua_nasua	Stav+Ishay	22	11	2016	Feces	Sample-2F2.mzXML	87	lipids-230718-neg-37.mzXML	lipids-230718-pos-37.mzXML	35	12_26_2018-inj-34	34	2019-01-14-inj-35.mzML	35	Sample-2F2	F	0-2hr
+Coati_7	Omnivores	Simplegut	Coati	Carnivora	Nasua_nasua	Stav+Ishay	22	11	2016	Feces	Sample-1B3.mzXML	8	lipids-230718-neg-38.mzXML	lipids-230718-pos-38.mzXML	84	12_26_2018-inj-64	64	2019-01-17-inj-108.mzML	108	Sample-1B3	F	0-2hr
+Coati_8	Omnivores	Simplegut	Coati	Carnivora	Nasua_nasua	Ruthie	1	12	2016	Feces	Sample-1D7.mzXML	28	lipids-230718-neg-39.mzXML	lipids-230718-pos-39.mzXML	100	12_26_2018-inj-98	98	2019-01-21-inj-139.mzML	139	Sample-1D7	F	Delayed
+Donkey_1	Herbivores	Hindgut	Donkey	Perissodactyla	Equus_asinus	Stav+Elie	11	9	2016	Feces	Sample-1D1.mzXML	22	lipids-230718-neg-7.mzXML	lipids-230718-pos-7.mzXML	32	12_26_2018-inj-31	31	2019-01-14-inj-32.mzML	32	Sample-1D1	M	Delayed
+Gibbon_1	Omnivores	Simplegut	Gibbon	Primates	Hylobates_lar	Ishay	10	1	2017	Feces	Sample-1B4.mzXML	9	lipids-230718-neg-45.mzXML	lipids-230718-pos-45.mzXML	22	12_26_2018-inj-23	23	2019-01-13-inj-22.mzML	22	Sample-1B4	F	Delayed
+Gibbon_2	Omnivores	Simplegut	Gibbon	Primates	Hylobates_lar	Ruthie	11	1	2017	Feces	Sample-1D8.mzXML	29	lipids-230718-neg-46.mzXML	lipids-230718-pos-46.mzXML	63	12_27_2018-inj-121	121	2019-01-15-inj-69.mzML	69	Sample-1D8	M	Delayed
+Gibbon_3	Omnivores	Simplegut	Gibbon	Primates	Hylobates_lar	Ishay	24	1	2017	Feces	Sample-2A4.mzXML	49	lipids-230718-neg-47.mzXML	lipids-230718-pos-47.mzXML	36	12_26_2018-inj-35	35	2019-01-14-inj-36.mzML	36	Sample-2A4	F	0-2hr
+Goat_1	Herbivores	Foregut	Goat	Artiodactyla	Capra_hircus	Stav+Elie	11	9	2016	Feces	Sample-1A5.mzXML	2	lipids-230718-neg-6.mzXML	lipids-230718-pos-6.mzXML	59	12_27_2018-inj-117	117	2019-01-15-inj-65.mzML	65	Sample-1A5	NA	0-2hr
+Gorilla_1	Herbivores	Simplegut	Gorilla	Primates	Gorilla_gorilla	Ruthie	22	12	2016	Feces	Sample-2D4.mzXML	73	lipids-230718-neg-48.mzXML	lipids-230718-pos-48.mzXML	85	12_26_2018-inj-65	65	2019-01-17-inj-109.mzML	109	Sample-2D4	M	Delayed
+Gorilla_2	Herbivores	Simplegut	Gorilla	Primates	Gorilla_gorilla	Ruthie	28	12	2016	Feces	Sample-2F8.mzXML	93	lipids-230718-neg-49.mzXML	lipids-230718-pos-49.mzXML	101	12_26_2018-inj-99	99	2019-01-21-inj-140.mzML	140	Sample-2F8	F	Delayed
+Gorilla_3	Herbivores	Simplegut	Gorilla	Primates	Gorilla_gorilla	Ruthie	28	12	2016	Feces	Sample-1C1.mzXML	14	lipids-230718-neg-50.mzXML	lipids-230718-pos-50.mzXML	53	12_27_2018-inj-131	131	2019-01-15-inj-61.mzML	61	Sample-1C1	F	Delayed
+Gorilla_4	Herbivores	Simplegut	Gorilla	Primates	Gorilla_gorilla	Ruthie	25	1	2017	Feces	Sample-1E5.mzXML	34	15-lipids-120918-neg-redo-51.mzXML	16-lipids-120918-pos-redo-51.mzXML	141	12_25_2018-inj-11	11	2019-01-13-inj-11.mzML	11	Sample-1E5	F	0-2hr
+Gorilla_5	Herbivores	Simplegut	Gorilla	Primates	Gorilla_gorilla	Ruthie	25	1	2017	Feces	Sample-2B1.mzXML	54	lipids-230718-neg-52.mzXML	lipids-230718-pos-52.mzXML	119	12_27_2018-inj-110	110	2019-01-16-inj-85.mzML	85	Sample-2B1	F	0-2hr
+Gorilla_6	Herbivores	Simplegut	Gorilla	Primates	Gorilla_gorilla	Ruthie+Ishay	1	3	2017	Feces	Sample-2D5.mzXML	74	lipids-230718-neg-53.mzXML	lipids-230718-pos-53.mzXML	89	12_26_2018-inj-56	56	2019-01-14-inj-48.mzML	48	Sample-2D5	F	0-2hr
+Hyena_1	Carnivores	Simplegut	Hyena	Carnivora	Hyaena_hyaena	Stav+Ruthie	20	9	2016	Feces	Sample-1F7.mzXML	44	lipids-230718-neg-21.mzXML	lipids-230718-pos-21.mzXML	8	12_25_2018-inj-7	7	2019-01-13-inj-7.mzML	7	Sample-1F7	F	Delayed
+Jungle_cat_1	Carnivores	Simplegut	Jungle_cat	Carnivora	Felis_chaus	Stav+Ruthie	20	9	2016	Feces	Sample-1F5.mzXML	42	lipids-230718-neg-08.mzXML	lipids-230718-pos-08.mzXML	81	12_26_2018-inj-61	61	2019-01-17-inj-105.mzML	105	Sample-1F5	M	0-2hr
+Jungle_cat_2	Carnivores	Simplegut	Jungle_cat	Carnivora	Felis_chaus	Stav	23	9	2016	Feces	Sample-2C1.mzXML	62	lipids-230718-neg-09.mzXML	lipids-230718-pos-09.mzXML	97	12_26_2018-inj-95	95	2019-01-21-inj-136.mzML	136	Sample-2C1	M	Delayed
+Lemur_1	Omnivores	Simplegut	Lemur_RR	Primates	Varecia_variegata_rubra	Ishay	27	12	2016	Feces	Sample-2B5.mzXML	58	lipids-230718-neg-42.mzXML	lipids-230718-pos-42.mzXML	75	12_27_2018-inj-109	109	2019-01-16-inj-84.mzML	84	Sample-2B5	M	Delayed
+Lemur_2	Omnivores	Simplegut	Lemur_BWR	Primates	Varecia_variegata	Ishay	27	12	2016	Feces	Sample-2E1.mzXML	78	lipids-230718-neg-43.mzXML	lipids-230718-pos-43.mzXML	88	12_26_2018-inj-55	55	2019-01-14-inj-47.mzML	47	Sample-2E1	M	Delayed
+Leopard_1	Carnivores	Simplegut	Leopard	Carnivora	Panthera_pardus	Stav	21	11	2016	Feces	Sample-2C5.mzXML	66	lipids-230718-neg-14.mzXML	lipids-230718-pos-14.mzXML	110	12_26_2018-inj-75	75	2019-01-21-inj-126.mzML	126	Sample-2C5	M	Delayed
+Leopard_2	Carnivores	Simplegut	Leopard	Carnivora	Panthera_pardus	Stav	23	1	2017	Feces	Sample-2F1.mzXML	86	lipids-230718-neg-15.mzXML	lipids-230718-pos-15.mzXML	19	12_26_2018-inj-20	20	2019-01-13-inj-19.mzML	19	Sample-2F1	F	Delayed
+Lion_1	Carnivores	Simplegut	Lion	Carnivora	Panthera_leo	Stav	29	11	2016	Feces	Sample-1B8.mzXML	13	lipids-230718-neg-16.mzXML	lipids-230718-pos-16.mzXML	60	12_27_2018-inj-118	118	2019-01-15-inj-66.mzML	66	Sample-1B8	F	0-2hr
+Lion_2	Carnivores	Simplegut	Lion	Carnivora	Panthera_leo	Stav	6	12	2016	Feces	Sample-1E4.mzXML	33	lipids-230718-neg-17.mzXML	lipids-230718-pos-17.mzXML	33	12_26_2018-inj-32	32	2019-02-13-inj-238.mzML	238	Sample-1E4	F	Delayed
+Lion_3	Carnivores	Simplegut	Lion	Carnivora	Panthera_leo	Ruthie	25	1	2017	Feces	Sample-2A8.mzXML	53	lipids-230718-neg-101.mzXML	lipids-230718-pos-101.mzXML	16	12_25_2018-inj-16	16	2019-01-13-inj-16.mzML	16	Sample-2A8	M	0-2hr
+Mandarill_1	Omnivores	Simplegut	Mandrill	Primates	Mandrillus_sphinx	Ruthie	22	12	2016	Feces	Sample-X-60.mzXML	94	lipids-230718-neg-54.mzXML	lipids-230718-pos-54.mzXML	114	12_26_2018-inj-79	79	2019-01-21-inj-130.mzML	130	Sample-X-60	M	Delayed
+Mandarill_2	Omnivores	Simplegut	Mandrill	Primates	Mandrillus_sphinx	Ruthie	22	12	2016	Feces	Sample-1C2.mzXML	15	lipids-230718-neg-55.mzXML	lipids-230718-pos-55.mzXML	23	12_26_2018-inj-24	24	2019-01-13-inj-23.mzML	23	Sample-1C2	F	Delayed
+Mandarill_3	Omnivores	Simplegut	Mandrill	Primates	Mandrillus_sphinx	Ruthie	22	12	2016	Feces	Sample-1E6.mzXML	35	lipids-230718-neg-56.mzXML	lipids-230718-pos-56.mzXML	64	12_27_2018-inj-122	122	2019-01-15-inj-71.mzML	71	Sample-1E6	F	Delayed
+Mandarill_4	Omnivores	Simplegut	Mandrill	Primates	Mandrillus_sphinx	Ruthie	22	12	2016	Feces	Sample-2B2.mzXML	55	lipids-230718-neg-57.mzXML	lipids-230718-pos-57.mzXML	37	12_26_2018-inj-36	36	2019-01-14-inj-37.mzML	37	Sample-2B2	M	Delayed
+Mandarill_5	Omnivores	Simplegut	Mandrill	Primates	Mandrillus_sphinx	Ruthie	4	1	2017	Feces	Sample-2D6.mzXML	75	lipids-230718-neg-58.mzXML	lipids-230718-pos-58.mzXML	86	12_26_2018-inj-66	66	2019-02-10-inj-225.mzML	225	Sample-2D6	F	Delayed
+Mandarill_6	Omnivores	Simplegut	Mandrill	Primates	Mandrillus_sphinx	Ruthie	4	1	2017	Feces	Sample-X-65.mzXML	95	lipids-230718-neg-59.mzXML	lipids-230718-pos-59.mzXML	102	12_26_2018-inj-100	100	2019-01-23-inj-171.mzML	171	Sample-X-65	F	Delayed
+Mandarill_7	Omnivores	Simplegut	Mandrill	Primates	Mandrillus_sphinx	Ruthie	4	1	2017	Feces	Sample-1C3.mzXML	16	lipids-230718-neg-60.mzXML	lipids-230718-pos-60.mzXML	54	12_27_2018-inj-132	132	2019-01-17-inj-102.mzML	102	Sample-1C3	F	Delayed
+Mandarill_8	Omnivores	Simplegut	Mandrill	Primates	Mandrillus_sphinx	Ruthie+Ishay	2	3	2017	Feces	Sample-1E7.mzXML	36	lipids-230718-neg-61.mzXML	lipids-230718-pos-61.mzXML	12	12_25_2018-inj-12	12	2019-01-13-inj-12.mzML	12	Sample-1E7	M	Delayed
+Rhino_1	Herbivores	Hindgut	Rhino	Perissodactyla	Ceratotherium_simum	Stav+Ishay	22	11	2016	Feces	Sample-2A3.mzXML	48	lipids-230718-neg-72.mzXML	lipids-230718-pos-72.mzXML	77	12_27_2018-inj-112	112	2019-01-16-inj-87.mzML	87	Sample-2A3	F	0-2hr
+Rhino_10	Herbivores	Hindgut	Rhino	Perissodactyla	Ceratotherium_simum	Stav+Ishay	13	12	2016	Feces	Sample-1E3.mzXML	32	lipids-230718-neg-81.mzXML	lipids-230718-pos-81.mzXML	14	12_25_2018-inj-14	14	2019-01-13-inj-14.mzML	14	Sample-1E3	F	0-2hr
+Rhino_11	Herbivores	Hindgut	Rhino	Perissodactyla	Ceratotherium_simum	Stav+Ishay	13	12	2016	Feces	Sample-2A7.mzXML	52	lipids-230718-neg-82.mzXML	lipids-230718-pos-82.mzXML	78	12_27_2018-inj-113	113	2019-01-16-inj-88.mzML	88	Sample-2A7	F	0-2hr
+Rhino_12	Herbivores	Hindgut	Rhino	Perissodactyla	Ceratotherium_simum	Stav+Ishay	13	12	2016	Feces	Sample-2D3.mzXML	72	lipids-230718-neg-83.mzXML	lipids-230718-pos-83.mzXML	92	12_26_2018-inj-59	59	2019-01-14-inj-51.mzML	51	Sample-2D3	F	0-2hr
+Rhino_13	Herbivores	Hindgut	Rhino	Perissodactyla	Ceratotherium_simum	Stav	23	2	2017	Feces	Sample-2F7.mzXML	92	lipids-230718-neg-84.mzXML	lipids-230718-pos-84.mzXML	117	12_26_2018-inj-82	82	2019-01-21-inj-133.mzML	133	Sample-2F7	F	0-2hr
+Rhino_2	Herbivores	Hindgut	Rhino	Perissodactyla	Ceratotherium_simum	Stav+Ishay	22	11	2016	Feces	Sample-2C7.mzXML	68	lipids-230718-neg-73.mzXML	lipids-230718-pos-73.mzXML	91	12_26_2018-inj-58	58	2019-01-17-inj-100.mzML	100	Sample-2C7	F	0-2hr
+Rhino_3	Herbivores	Hindgut	Rhino	Perissodactyla	Ceratotherium_simum	Stav+Ishay	22	11	2016	Feces	Sample-2F3.mzXML	88	lipids-230718-neg-74.mzXML	lipids-230718-pos-74.mzXML	116	12_26_2018-inj-81	81	2019-01-21-inj-132.mzML	132	Sample-2F3	M	0-2hr
+Rhino_4	Herbivores	Hindgut	Rhino	Perissodactyla	Ceratotherium_simum	Stav+Ishay	22	11	2016	Feces	Sample-1B6.mzXML	11	lipids-230718-neg-75.mzXML	lipids-230718-pos-75.mzXML	25	12_26_2018-inj-26	26	2019-01-13-inj-25.mzML	25	Sample-1B6	M	0-2hr
+Rhino_5	Herbivores	Hindgut	Rhino	Perissodactyla	Ceratotherium_simum	Stav+Ishay	22	11	2016	Feces	Sample-1E2.mzXML	31	lipids-230718-neg-76.mzXML	lipids-230718-pos-76.mzXML	66	12_27_2018-inj-124	124	2019-01-15-inj-73.mzML	73	Sample-1E2	F	0-2hr
+Rhino_6	Herbivores	Hindgut	Rhino	Perissodactyla	Ceratotherium_simum	Stav	6	12	2016	Feces	Sample-2A6.mzXML	51	lipids-230718-neg-77.mzXML	lipids-230718-pos-77.mzXML	39	12_26_2018-inj-38	38	2019-01-28-inj-210.mzML	210	Sample-2A6	M	0-2hr
+Rhino_7	Herbivores	Hindgut	Rhino	Perissodactyla	Ceratotherium_simum	Stav+Ishay	13	12	2016	Feces	Sample-2D2.mzXML	71	lipids-230718-neg-78.mzXML	lipids-230718-pos-78.mzXML	120	12_26_2018-inj-68	68	2019-01-17-inj-112.mzML	112	Sample-2D2	M	0-2hr
+Rhino_8	Herbivores	Hindgut	Rhino	Perissodactyla	Ceratotherium_simum	Stav+Ishay	13	12	2016	Feces	Sample-2F6.mzXML	91	lipids-230718-neg-79.mzXML	lipids-230718-pos-79.mzXML	104	12_26_2018-inj-102	102	2019-01-21-inj-143.mzML	143	Sample-2F6	M	0-2hr
+Rhino_9	Herbivores	Hindgut	Rhino	Perissodactyla	Ceratotherium_simum	Stav+Ishay	13	12	2016	Feces	Sample-1B7.mzXML	12	lipids-230718-neg-80.mzXML	lipids-230718-pos-80.mzXML	56	12_27_2018-inj-134	134	2019-01-15-inj-62.mzML	62	Sample-1B7	F	0-2hr
+Sand_cat_1	Carnivores	Simplegut	Sand_cat	Carnivora	Felis_margarita	Stav+Ruthie	20	9	2016	Feces	Sample-2E5.mzXML	82	lipids-230718-neg-10.mzXML	lipids-230718-pos-10.mzXML	49	12_27_2018-inj-127	127	2019-01-14-inj-53.mzML	53	Sample-2E5	M	Delayed
+Sheep_1	Herbivores	Foregut	Sheep	Artiodactyla	Ovis_aries	Stav+Elie	11	9	2016	Feces	Sample-1A4.mzXML	1	lipids-230718-neg-1.mzXML	lipids-230718-pos-1.mzXML	7	12_25_2018-inj-6	6	2019-01-13-inj-6.mzML	6	Sample-1A4	NA	0-2hr
+Sheep_2	Herbivores	Foregut	Sheep	Artiodactyla	Ovis_aries	Stav+Elie	11	9	2016	Feces	Sample-1C8.mzXML	21	lipids-230718-neg-02.mzXML	lipids-230718-pos-02.mzXML	71	12_26_2018-inj-105	105	2019-01-15-inj-76.mzML	76	Sample-1C8	NA	0-2hr
+Sheep_3	Herbivores	Foregut	Sheep	Artiodactyla	Ovis_aries	Stav	19	9	2016	Feces	Sample-1F4.mzXML	41	lipids-230718-neg-3.mzXML	lipids-230718-pos-3.mzXML	42	12_26_2018-inj-51	51	2019-01-14-inj-43.mzML	43	Sample-1F4	F	0-2hr
+Sheep_4	Herbivores	Foregut	Sheep	Artiodactyla	Ovis_aries	Stav	19	9	2016	Feces	Sample-2B8.mzXML	61	lipids-230718-neg-04.mzXML	lipids-230718-pos-04.mzXML	109	12_26_2018-inj-74	74	2019-01-21-inj-125.mzML	125	Sample-2B8	F	0-2hr
+Sheep_5	Herbivores	Foregut	Sheep	Artiodactyla	Ovis_aries	Ruthie	11	1	2017	Feces	Sample-2E4.mzXML	81	lipids-230718-neg-5.mzXML	lipids-230718-pos-5.mzXML	18	12_25_2018-inj-19	19	2019-01-13-inj-18.mzML	18	Sample-2E4	F	0-2hr
+Tiger_1	Carnivores	Simplegut	Tiger	Carnivora	Panthera_tigris	Stav	23	9	2016	Feces	Sample-1D5.mzXML	26	lipids-230718-neg-12.mzXML	lipids-230718-pos-12.mzXML	72	12_27_2018-inj-106	106	2019-01-15-inj-77.mzML	77	Sample-1D5	M	0-2hr
+Tiger_2	Carnivores	Simplegut	Tiger	Carnivora	Panthera_tigris	Stav	23	2	2017	Feces	Sample-2A1.mzXML	46	lipids-230718-neg-13.mzXML	lipids-230718-pos-13.mzXML	43	12_26_2018-inj-52	52	2019-01-14-inj-44.mzML	44	Sample-2A1	M	Delayed
+Wolf_1	Carnivores	Simplegut	Israeli_Wolf	Carnivora	Canis_lupus	Ruthie+Ishay	1	3	2017	Feces	Sample-X-101.mzXML	99	lipids-230718-neg-40.mzXML	lipids-230718-pos-40.mzXML	52	12_27_2018-inj-130	130	2019-01-15-inj-60.mzML	60	Sample-X-101	F	0-2hr
+Wolf_2	Carnivores	Simplegut	Cape_Hunting_dog	Carnivora	Lycaon_pictus	Ruthie+Ishay	2	3	2017	Feces	Sample-2B7.mzXML	60	lipids-230718-neg-51.mzXML	lipids-230718-pos-51.mzXML	11	12_25_2018-inj-10	10	2019-01-13-inj-10.mzML	10	Sample-2B7	F	Delayed
+Zebra_1	Herbivores	Hindgut	Zebra	Perissodactyla	Equus_burchelli_boehmi	Stav	23	2	2017	Feces	Sample-2C8.mzXML	69	lipids-230718-neg-85.mzXML	lipids-230718-pos-85.mzXML	26	12_26_2018-inj-27	27	2019-01-13-inj-26.mzML	26	Sample-2C8	NA	0-2hr
+Zebra_10	Herbivores	Hindgut	Zebra	Perissodactyla	Equus_burchelli_boehmi	Stav	23	2	2017	Feces	Sample-2A5.mzXML	50	lipids-230718-neg-94.mzXML	lipids-230718-pos-94.mzXML	118	12_26_2018-inj-83	83	2019-01-21-inj-134.mzML	134	Sample-2A5	NA	0-2hr
+Zebra_11	Herbivores	Hindgut	Zebra	Perissodactyla	Equus_burchelli_boehmi	Stav	23	2	2017	Feces	Sample-1E1.mzXML	30	lipids-230718-neg-95.mzXML	lipids-230718-pos-95.mzXML	27	12_26_2018-inj-28	28	2019-01-13-inj-27.mzML	27	Sample-1E1	NA	0-2hr
+Zebra_12	Herbivores	Hindgut	Zebra	Perissodactyla	Equus_burchelli_boehmi	Stav	23	2	2017	Feces	Sample-1C6.mzXML	19	lipids-230718-neg-96.mzXML	lipids-230718-pos-96.mzXML	68	12_27_2018-inj-126	126	2019-01-15-inj-75.mzML	75	Sample-1C6	NA	0-2hr
+Zebra_13	Herbivores	Hindgut	Zebra	Perissodactyla	Equus_burchelli_boehmi	Stav	23	2	2017	Feces	Sample-2E3.mzXML	80	lipids-230718-neg-97.mzXML	lipids-230718-pos-97.mzXML	41	12_26_2018-inj-40	40	2019-01-14-inj-41.mzML	41	Sample-2E3	NA	0-2hr
+Zebra_14	Herbivores	Hindgut	Zebra	Perissodactyla	Equus_burchelli_boehmi	Stav	23	2	2017	Feces	Sample-1F2.mzXML	39	lipids-230718-neg-98.mzXML	lipids-230718-pos-98.mzXML	122	12_26_2018-inj-70	70	2019-01-17-inj-114.mzML	114	Sample-1F2	NA	0-2hr
+Zebra_15	Herbivores	Hindgut	Zebra	Perissodactyla	Equus_burchelli_boehmi	Stav	23	2	2017	Feces	Sample-2B6.mzXML	59	lipids-230718-neg-99.mzXML	lipids-230718-pos-99.mzXML	106	12_26_2018-inj-104	104	2019-01-21-inj-145.mzML	145	Sample-2B6	NA	0-2hr
+Zebra_16	Herbivores	Hindgut	Zebra	Perissodactyla	Equus_burchelli_boehmi	Stav	23	2	2017	Feces	Sample-2E2.mzXML	79	lipids-230718-neg-100.mzXML	lipids-230718-pos-100.mzXML	58	12_27_2018-inj-136	136	2019-01-15-inj-64.mzML	64	Sample-2E2	NA	0-2hr
+Zebra_2	Herbivores	Hindgut	Zebra	Perissodactyla	Equus_burchelli_boehmi	Stav	23	2	2017	Feces	Sample-2F4.mzXML	89	lipids-230718-neg-86.mzXML	lipids-230718-pos-86.mzXML	67	12_27_2018-inj-125	125	2019-01-15-inj-74.mzML	74	Sample-2F4	NA	0-2hr
+Zebra_3	Herbivores	Hindgut	Zebra	Perissodactyla	Equus_burchelli_boehmi	Stav	23	2	2017	Feces	Sample-X-87.mzXML	101	lipids-230718-neg-87.mzXML	lipids-230718-pos-87.mzXML	40	12_26_2018-inj-39	39	2019-01-28-inj-211.mzML	211	Sample-X-87	NA	0-2hr
+Zebra_4	Herbivores	Hindgut	Zebra	Perissodactyla	Equus_burchelli_boehmi	Stav	23	2	2017	Feces	Sample-2D1.mzXML	70	lipids-230718-neg-88.mzXML	lipids-230718-pos-88.mzXML	121	12_26_2018-inj-69	69	2019-02-10-inj-226.mzML	226	Sample-2D1	NA	0-2hr
+Zebra_5	Herbivores	Hindgut	Zebra	Perissodactyla	Equus_burchelli_boehmi	Stav	23	2	2017	Feces	Sample-2F5.mzXML	90	lipids-230718-neg-89.mzXML	lipids-230718-pos-89.mzXML	105	12_26_2018-inj-103	103	2019-01-21-inj-144.mzML	144	Sample-2F5	NA	0-2hr
+Zebra_6	Herbivores	Hindgut	Zebra	Perissodactyla	Equus_burchelli_boehmi	Stav	23	2	2017	Feces	Sample-1C7.mzXML	20	lipids-230718-neg-90.mzXML	lipids-230718-pos-90.mzXML	57	12_27_2018-inj-135	135	2019-01-15-inj-63.mzML	63	Sample-1C7	NA	0-2hr
+Zebra_7	Herbivores	Hindgut	Zebra	Perissodactyla	Equus_burchelli_boehmi	Stav	23	2	2017	Feces	Sample-1F3.mzXML	40	lipids-230718-neg-91.mzXML	lipids-230718-pos-91.mzXML	15	12_25_2018-inj-15	15	2019-01-13-inj-15.mzML	15	Sample-1F3	NA	0-2hr
+Zebra_8	Herbivores	Hindgut	Zebra	Perissodactyla	Equus_burchelli_boehmi	Stav	23	2	2017	Feces	Sample-1B5.mzXML	10	lipids-230718-neg-92.mzXML	lipids-230718-pos-92.mzXML	79	12_27_2018-inj-114	114	2019-01-17-inj-95.mzML	95	Sample-1B5	NA	0-2hr
+Zebra_9	Herbivores	Hindgut	Zebra	Perissodactyla	Equus_burchelli_boehmi	Stav	23	2	2017	Feces	Sample-X-93.mzXML	100	lipids-230718-neg-93.mzXML	lipids-230718-pos-93.mzXML	93	12_26_2018-inj-60	60	2019-01-28-inj-212.mzML	212	Sample-X-93	NA	0-2hr
+Cauliflower_leaves	Plants	NA	Plants	NA	NA	Rachel	1	3	2018	Food	Food-310518-1.mzXML	102	109-lipids-120918-neg-137.mzXML	110-lipids-120918-pos-137.mzXML	235	NA	NA	2019-01-23-inj-197.mzML	197	Food-310518-1		
+Yellow_bell_pepper	Plants	NA	Plants	NA	NA	Rachel	1	3	2018	Food	Food-310518-2.mzXML	103	27-lipids-120918-neg-102.mzXML	28-lipids-120918-pos-102.mzXML	153	NA	NA	2019-01-21-inj-151.mzML	151	Food-310518-2		
+Cattle_mix_pellets	Pellets	NA	Pellets	NA	NA	Rachel	1	3	2018	Food	Food-310518-3.mzXML	104	29-lipids-120918-neg-103.mzXML	30-lipids-120918-pos-103.mzXML	155	NA	NA	2019-01-21-inj-152.mzML	152	Food-310518-3		
+Cauliflower_floret	Plants	NA	Plants	NA	NA	Rachel	1	3	2018	Food	Food-310518-4.mzXML	105	31-lipids-120918-neg-104.mzXML	32-lipids-120918-pos-104.mzXML	157	NA	NA	2019-01-21-inj-153.mzML	153	Food-310518-4		
+Eggplant	Plants	NA	Plants	NA	NA	Rachel	1	3	2018	Food	Food-310518-6.mzXML	107	35-lipids-120918-neg-106.mzXML	36-lipids-120918-pos-106.mzXML	161	NA	NA	2019-01-21-inj-154.mzML	154	Food-310518-6		
+Cucumber	Plants	NA	Plants	NA	NA	Rachel	1	3	2018	Food	Food-310518-7.mzXML	108	37-lipids-120918-neg-107.mzXML	38-lipids-120918-pos-107.mzXML	163	NA	NA	2019-01-21-inj-155.mzML	155	Food-310518-7		
+Watermelon	Fruit	NA	Fruit	NA	NA	Rachel	1	3	2018	Food	Food-310518-8.mzXML	109	39-lipids-120918-neg-108.mzXML	40-lipids-120918-pos-108.mzXML	165	NA	NA	2019-01-21-inj-156.mzML	156	Food-310518-8		
+Beets	Plants	NA	Plants	NA	NA	Rachel	1	3	2018	Food	Food-310518-9.mzXML	110	41-lipids-120918-neg-109.mzXML	42-lipids-120918-pos-109.mzXML	167	NA	NA	2019-01-21-inj-157.mzML	157	Food-310518-9		
+Wheat_straw	Straw	NA	Straw	NA	NA	Rachel	1	3	2018	Food	Food-310518-10.mzXML	111	43-lipids-120918-neg-110.mzXML	44-lipids-120918-pos-110.mzXML	169	NA	NA	2019-01-21-inj-158.mzML	158	Food-310518-10		
+Hardboiled_egg_yolk	Meat	NA	Meat	NA	NA	Rachel	16	5	2018	Food	Food-310518-11.mzXML	112	45-lipids-120918-neg-111.mzXML	46-lipids-120918-pos-111.mzXML	171	NA	NA	2019-01-21-inj-159.mzML	159	Food-310518-11		
+Chicken	Meat	NA	Meat	NA	NA	Rachel	1	3	2018	Food	Food-310518-12.mzXML	113	47-lipids-120918-neg-112.mzXML	48-lipids-120918-pos-112.mzXML	173	NA	NA	2019-01-21-inj-160.mzML	160	Food-310518-12		
+Cabbage	Plants	NA	Plants	NA	NA	Rachel	1	3	2018	Food	Food-310518-13.mzXML	114	49-lipids-120918-neg-113.mzXML	50-lipids-120918-pos-113.mzXML	175	NA	NA	2019-01-21-inj-161.mzML	161	Food-310518-13		
+Vicia_straw	Straw	NA	Straw	NA	NA	Rachel	1	3	2018	Food	Food-310518-14.mzXML	115	51-lipids-120918-neg-114.mzXML	52-lipids-120918-pos-114.mzXML	177	NA	NA	2019-01-21-inj-163.mzML	163	Food-310518-14		
+Red_bell_pepper	Plants	NA	Plants	NA	NA	Rachel	1	3	2018	Food	Food-310518-15.mzXML	116	53-lipids-120918-neg-115.mzXML	54-lipids-120918-pos-115.mzXML	179	NA	NA	2019-01-21-inj-164.mzML	164	Food-310518-15		
+Zucchini	Plants	NA	Plants	NA	NA	Rachel	1	3	2018	Food	Food-310518-16.mzXML	117	61-lipids-120918-neg-116.mzXML	62-lipids-120918-pos-116.mzXML	187	NA	NA	2019-01-21-inj-165.mzML	165	Food-310518-16		
+Mealworm	Meat	NA	Meat	NA	NA	Rachel	1	3	2018	Food	Food-310518-17.mzXML	118	63-lipids-120918-neg-117.mzXML	64-lipids-120918-pos-117.mzXML	189	NA	NA	2019-01-23-inj-172.mzML	172	Food-310518-17		
+Lettuce	Plants	NA	Plants	NA	NA	Rachel	1	3	2018	Food	Food-310518-18.mzXML	119	65-lipids-120918-neg-118.mzXML	66-lipids-120918-pos-118.mzXML	191	NA	NA	2019-01-23-inj-173.mzML	173	Food-310518-18		
+Melon	Fruit	NA	Fruit	NA	NA	Rachel	2	5	2018	Food	Food-310518-19.mzXML	120	67-lipids-120918-neg-119.mzXML	68-lipids-120918-pos-119.mzXML	193	NA	NA	2019-01-23-inj-174.mzML	174	Food-310518-19		
+Alfalfa_straw	Straw	NA	Straw	NA	NA	Rachel	1	3	2018	Food	Food-310518-20.mzXML	121	69-lipids-120918-neg-120.mzXML	70-lipids-120918-pos-120.mzXML	195	NA	NA	2019-01-23-inj-175.mzML	175	Food-310518-20		
+Birds_mix_pellet	Pellets	NA	Pellets	NA	NA	Rachel	1	3	2018	Food	Food-310518-21.mzXML	122	71-lipids-120918-neg-121.mzXML	72-lipids-120918-pos-121.mzXML	197	NA	NA	2019-01-23-inj-176.mzML	176	Food-310518-21		
+Peanuts	Plants	NA	Plants	NA	NA	Rachel	1	3	2018	Food	Food-310518-22.mzXML	123	73-lipids-120918-neg-122.mzXML	74-lipids-120918-pos-122.mzXML	199	NA	NA	2019-01-23-inj-177.mzML	177	Food-310518-22		
+Persimmon	Fruit	NA	Fruit	NA	NA	Rachel	1	3	2018	Food	Food-310518-23.mzXML	124	75-lipids-120918-neg-123.mzXML	76-lipids-120918-pos-123.mzXML	201	NA	NA	2019-01-23-inj-178.mzML	178	Food-310518-23		
+Green_apple	Fruit	NA	Fruit	NA	NA	Rachel	1	3	2018	Food	Food-310518-24.mzXML	125	77-lipids-120918-neg-124.mzXML	78-lipids-120918-pos-124.mzXML	203	NA	NA	2019-01-23-inj-179.mzML	179	Food-310518-24		
+Oats_straw	Straw	NA	Straw	NA	NA	Rachel	1	3	2018	Food	Food-310518-25.mzXML	126	79-lipids-120918-neg-125.mzXML	80-lipids-120918-pos-125.mzXML	205	NA	NA	2019-01-23-inj-180.mzML	180	Food-310518-25		
+Bonzo_pellets	Pellets	NA	Pellets	NA	NA	Rachel	1	3	2018	Food	Food-310518-26.mzXML	127	81-lipids-120918-neg-126.mzXML	82-lipids-120918-pos-126.mzXML	207	NA	NA	2019-01-23-inj-186.mzML	186	Food-310518-26		
+Sweet_potato	Plants	NA	Plants	NA	NA	Rachel	1	3	2018	Food	Food-310518-28.mzXML	129	91-lipids-120918-neg-128.mzXML	92-lipids-120918-pos-128.mzXML	217	NA	NA	2019-01-23-inj-188.mzML	188	Food-310518-28		
+Beef	Meat	NA	Meat	NA	NA	Rachel	1	3	2018	Food	Food-310518-29.mzXML	130	93-lipids-120918-neg-129.mzXML	94-lipids-120918-pos-129.mzXML	219	NA	NA	2019-01-23-inj-189.mzML	189	Food-310518-29		
+Mouse	Meat	NA	Meat	NA	NA	Rachel	1	3	2018	Food	Food-310518-30.mzXML	131	95-lipids-120918-neg-130.mzXML	96-lipids-120918-pos-130.mzXML	221	NA	NA	2019-01-23-inj-190.mzML	190	Food-310518-30		
+Tomato	Plants	NA	Plants	NA	NA	Rachel	1	3	2018	Food	Food-310518-31.mzXML	132	97-lipids-120918-neg-131.mzXML	98-lipids-120918-pos-131.mzXML	223	NA	NA	2019-01-23-inj-191.mzML	191	Food-310518-31		
+Kohlrabi	Plants	NA	Plants	NA	NA	Rachel	1	3	2018	Food	Food-310518-32.mzXML	133	99-lipids-120918-neg-132.mzXML	100-lipids-120918-pos-132.mzXML	225	NA	NA	2019-01-23-inj-192.mzML	192	Food-310518-32		
+Fennel	Plants	NA	Plants	NA	NA	Rachel	1	3	2018	Food	Food-310518-33.mzXML	134	101-lipids-120918-neg-133.mzXML	102-lipids-120918-pos-133.mzXML	227	NA	NA	2019-01-23-inj-193.mzML	193	Food-310518-33		
+Fish	Meat	NA	Meat	NA	NA	Rachel	1	3	2018	Food	Food-310518-34.mzXML	135	103-lipids-120918-neg-134.mzXML	104-lipids-120918-pos-134.mzXML	229	NA	NA	2019-01-23-inj-194.mzML	194	Food-310518-34		
+Hardboiled_egg_white	Meat	NA	Meat	NA	NA	Rachel	16	5	2018	Food	Food-310518-35.mzXML	136	105-lipids-120918-neg-135.mzXML	106-lipids-120918-pos-135.mzXML	231	NA	NA	2019-01-23-inj-195.mzML	195	Food-310518-35		
+Banana	Fruit	NA	Fruit	NA	NA	Rachel	1	3	2018	Food	Food-310518-36.mzXML	137	107-lipids-120918-neg-136.mzXML	108-lipids-120918-pos-136.mzXML	233	NA	NA	2019-01-23-inj-196.mzML	196	Food-310518-36		
+QC_1	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	QC-230718-neg-1.mzXML	QC-230718-pos-1.mzXML	3	NA	NA	2019-01-13-inj-4.mzML	4	NA		
+QC_2	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	QC2.mzXML	NA	QC-230718-neg-1_180724001524.mzXML	QC-230718-pos-1_180724004019.mzXML	4	NA	NA	2019-01-13-inj-5.mzML	5	QC2		
+QC_3	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	QC3.mzXML	NA	QC-230718-neg-1_180724010517.mzXML	QC-230718-pos-1_180724013012.mzXML	5	NA	NA	2019-01-14-inj-31.mzML	31	QC3		
+QC_4	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	QC4.mzXML	NA	QC-230718-neg-2.mzXML	QC-230718-pos-2.mzXML	6	NA	NA	2019-01-14-inj-42.mzML	42	QC4		
+QC_5	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	QC-230718-neg-3.mzXML	QC-230718-pos-3.mzXML	17	NA	NA	2019-01-15-inj-58.mzML	58	NA		
+QC_6	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	QC-230718-neg-4.mzXML	QC-230718-pos-4.mzXML	28	NA	NA	2019-01-15-inj-70.mzML	70	NA		
+QC_7	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	QC-230718-neg-4-b.mzXML	QC-230718-pos-4-b.mzXML	30	NA	NA	2019-01-16-inj-83.mzML	83	NA		
+QC_8	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	QC-230718-neg-4-c.mzXML	QC-230718-pos-4-c.mzXML	31	NA	NA	2019-01-17-inj-94.mzML	94	NA		
+QC_9	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	QC-230718-neg-5.mzXML	QC-230718-pos-5.mzXML	46	NA	NA	2019-01-17-inj-104.mzML	104	NA		
+QC_10	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	QC-250718-neg-6.mzXML	QC-250718-pos-6.mzXML	48	NA	NA	2019-01-21-inj-120.mzML	123	NA		
+QC_11	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	QC-250718-neg-7.mzXML	QC-250718-pos-7.mzXML	70	NA	NA	2019-01-21-inj-124.mzML	124	NA		
+QC_12	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	QC-250718-neg-8.mzXML	QC-250718-pos-8.mzXML	80	NA	NA	2019-01-21-inj-135.mzML	135	NA		
+QC_13	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	QC-250718-neg-9.mzXML	QC-250718-pos-9.mzXML	94	NA	NA	2019-01-21-inj-146.mzML	146	NA		
+QC_14	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	QC-250718-neg-10.mzXML	QC-250718-pos-10.mzXML	96	NA	NA	2019-01-21-inj-162.mzML	162	NA		
+QC_15	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	QC-250718-neg-11.mzXML	QC-250718-pos-11.mzXML	107	NA	NA	2019-01-23-inj-181.mzML	181	NA		
+QC_16	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	QC-250718-neg-12.mzXML	QC-250718-pos-12.mzXML	123	NA	NA	2019-01-23-inj-185.mzML	185	NA		
+QC_17	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	QC-250718-neg-13.mzXML	QC-250718-pos-13.mzXML	124	NA	NA	2019-01-23-inj-198.mzML	198	NA		
+QC_18	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	07-lipids-120918-neg-QC-22.mzXML	08-lipids-120918-pos-QC-22.mzXML	133	NA	NA	2019-01-28-inj-206.mzML	206	NA		
+QC_19	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	09-lipids-120918-neg-QC-23.mzXML	10-lipids-120918-pos-QC-23.mzXML	135	NA	NA	2019-01-28-inj-207.mzML	207	NA		
+QC_20	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	11-lipids-120918-neg-QC-14.mzXML	12-lipids-120918-pos-QC-14.mzXML	137	NA	NA	2019-01-28-inj-213.mzML	213	NA		
+QC_21	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	13-lipids-120918-neg-QC-15.mzXML	14-lipids-120918-pos-QC-15.mzXML	139	NA	NA	2019-02-10-inj-223.mzML	223	NA		
+QC_22	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	19-lipids-120918-neg-QC-16.mzXML	20-lipids-120918-pos-QC-16.mzXML	145	NA	NA	2019-02-10-inj-227.mzML	227	NA		
+QC_23	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	21-lipids-120918-neg-QC-17.mzXML	22-lipids-120918-pos-QC-17.mzXML	147	NA	NA	2019-02-13-inj-236.mzML	236	NA		
+QC_24	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	25-lipids-120918-neg-QC-24.mzXML	26-lipids-120918-pos-QC-24.mzXML	151	NA	NA	2019-02-13-inj-237.mzML	237	NA		
+QC_25	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	55-lipids-120918-neg-QC-25.mzXML	56-lipids-120918-pos-QC-25.mzXML	181	NA	NA	2019-02-13-inj-235.mzML	235	NA		
+QC_26	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	59-lipids-120918-neg-QC-26.mzXML	60-lipids-120918-pos-QC-26.mzXML	185	NA	NA	2019-02-10-inj-222.mzML	222	NA		
+QC_27	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	83-lipids-120918-neg-QC-27.mzXML	84-lipids-120918-pos-QC-27.mzXML	209	NA	NA	2019-02-10-inj-221.mzML	221	NA		
+QC_28	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	87-lipids-120918-neg-QC-28.mzXML	88-lipids-120918-pos-QC-28.mzXML	213	NA	NA	NA	NA	NA		
+QC_29	QC	NA	QC	NA	NA	NA	NA	NA	NA	QC	NA	NA	111-lipids-120918-neg-QC-29.mzXML	112-lipids-120918-pos-QC-29.mzXML	237	NA	NA	NA	NA	NA		
+Bkgrnd_1_food	Blank	NA	Blank	NA	NA	Rachel	1	3	2018	Blank	Food-310518-5.mzXML	106	33-lipids-120918-neg-105.mzXML	34-lipids-120918-pos-105.mzXML	159	NA	NA	2019-01-21-inj-150.mzML	150	Food-310518-5		
+Bkgrnd_2_food	Blank	NA	Blank	NA	NA	Rachel	1	3	2018	Blank	Food-310518-27.mzXML	128	89-lipids-120918-neg-127.mzXML	90-lipids-120918-pos-127.mzXML	215	NA	NA	2019-01-23-inj-187.mzML	187	Food-310518-27		
+Bkgrnd_feces	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	Bkgrnd.mzXML	142	NA	NA	NA	NA	NA	NA	NA	Bkgrnd		
+Blank_feces-MeOH	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	blank-MeOH-6-DD.mzXML	143	MeOH-230718-neg-2.mzXML	MeOH-230718-pos-2.mzXML	2	NA	NA	NA	NA	blank-MeOH-6-DD		
+Blank_food-MeOH	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	blank-MeOH-1-310518.mzXML	141	01-wash-neg-120918.mzXML	02-wash-pos-120918.mzXML	127	NA	NA	NA	NA	blank-MeOH-1-310518		
+Blank_1	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	MeOH-230718-neg-1.mzXML	MeOH-230718-pos-1.mzXML	1	NA	NA	2019-01-13-1-pyr.mzML	-3	NA		
+Blank_2	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	MeOH-230718-neg-4.mzXML	MeOH-230718-pos-4.mzXML	29	NA	NA	2019-01-13-2-pyr.mzML	-2	NA		
+Blank_3	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	MeOH-230718-neg-5.mzXML	MeOH-230718-pos-5.mzXML	47	NA	NA	2019-01-13-3-pyr.mzML	-1	NA		
+Blank_4	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	MeOH-250718-neg-1.mzXML	MeOH-250718-pos-1.mzXML	69	NA	NA	2019-01-13-inj-28.mzML	28	NA		
+Blank_5	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	MeOH-250718-neg-2.mzXML	MeOH-250718-pos-2.mzXML	95	NA	NA	2019-01-14-inj-55.mzML	55	NA		
+Blank_6	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	MeOH-250718-neg-3.mzXML	MeOH-250718-pos-3.mzXML	108	NA	NA	2019-01-15-inj-80.mzML	80	NA		
+Blank_7	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	MeOH-250718-neg-4.mzXML	MeOH-250718-pos-4.mzXML	125	NA	NA	2019-01-17-inj-115.mzML	115	NA		
+Blank_8	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	MeOH-250718-neg-5.mzXML	MeOH-250718-pos-5.mzXML	126	NA	NA	2019-01-17-inj-89.mzML	89	NA		
+Blank_9	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	23-wash-neg-120918.mzXML	24-wash-pos-120918.mzXML	150	NA	NA	2019-01-17-inj-90.mzML	90	NA		
+Blank_10	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	57-wash-neg-120918.mzXML	58-wash-pos-120918.mzXML	183	NA	NA	2019-01-17-inj-91.mzML	91	NA		
+Blank_11	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	85-wash-neg-120918.mzXML	86-wash-pos-120918.mzXML	212	NA	NA	2019-01-21-inj-116.mzML	116	NA		
+Blank_12	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	113-wash-neg-120918.mzXML	114-wash-pos-120918.mzXML	240	NA	NA	2019-01-21-inj-117.mzML	117	NA		
+Blank_13	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	115-wash-neg-120918.mzXML	116-wash-pos-120918.mzXML	242	NA	NA	2019-01-21-inj-118.mzML	118	NA		
+Blank_14	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	117-wash-neg-120918.mzXML	118-wash-pos-120918.mzXML	244	NA	NA	2019-01-21-inj-147.mzML	147	NA		
+Blank_15	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-01-23-inj-166.mzML	166			
+Blank_16	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-01-23-inj-167.mzML	167			
+Blank_17	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-01-23-inj-168.mzML	168			
+Blank_18	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-01-23-inj-182.mzML	182			
+Blank_19	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-01-23-inj-199.mzML	199			
+Blank_20	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-01-28-inj-200.mzML	200			
+Blank_21	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-01-28-inj-201.mzML	201			
+Blank_22	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-01-28-inj-202.mzML	202			
+Blank_23	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-01-28-inj-214.mzML	214			
+Blank_24	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-01-28-inj-215.mzML	215			
+Blank_25	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-01-28-inj-216.mzML	216			
+Blank_26	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-02-10-inj-217.mzML	217			
+Blank_27	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-02-10-inj-218.mzML	218			
+Blank_28	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-02-10-inj-219.mzML	219			
+Blank_29	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-02-10-inj-228.mzML	228			
+Blank_30	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-02-10-inj-229.mzML	229			
+Blank_31	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-02-10-inj-230.mzML	230			
+Blank_32	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-02-13-inj-231.mzML	231			
+Blank_33	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-02-13-inj-232.mzML	232			
+Blank_34	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-02-13-inj-233.mzML	233			
+Blank_35	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-02-13-inj-240.mzML	240			
+Blank_36	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-02-13-inj-241.mzML	241			
+Alkane_1	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-01-13-inj-1.mzML	1	NA		
+Alkane_2	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-01-14-inj-29.mzML	29	NA		
+Alkane_3	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-01-15-inj-56.mzML	56	NA		
+Alkane_4	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-01-16-inj-81.mzML	81	NA		
+Alkane_5	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-01-21-inj-122.mzML	122	NA		
+Alkane_6	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-01-21-inj-148.mzML	148	NA		
+Alkane_7	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-01-23-inj-183.mzML	183	NA		
+Alkane_8	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-01-28-inj-203.mzML	203	NA		
+Alkane_9	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-02-10-inj-220.mzML	220	NA		
+Alkane_10	Blank	NA	Blank	NA	NA	NA	NA	NA	NA	Blank	NA	NA	NA	NA	NA	NA	NA	2019-02-13-inj-234.mzML	234	NA		
