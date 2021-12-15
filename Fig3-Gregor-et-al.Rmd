@@ -1,0 +1,265 @@
+---
+title: "Data analysis Gregor et al"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+The following is the code to create the figures in the paper "Mammalian gut metabolomes mirror microbiome composition and host phylogeny"
+
+Load packages
+```{r}
+
+library(phyloseq)
+library(vegan)
+library(ggplot2)
+library(dplyr)
+library(reshape2)
+library(tidyr)
+```
+
+Load phyloseq objects and metadata
+
+```{r}
+#metadata
+metadata <- read.delim("metadata.txt", header = T, sep = "") ## load metadata file
+metadata <-subset(metadata, Type=="Feces")
+metadata <- droplevels(metadata)
+
+##Short chain fatty acid data from GC-FID
+ps_scfa <- readRDS("Phyloseq_files/ps_scfa.rds")
+
+
+#GC-MS metabolomics data (fecal samples)
+ps_gcms <- readRDS("Phyloseq_files/ps_gcms.rds")
+
+
+```
+
+
+##Fig 3A- SCFAs
+
+Calculate ratios of acetate, propionate, and butyrate
+```{r}
+
+aceprobut <- as.data.frame(otu_table(ps_scfa))
+aceprobut <- aceprobut[,c(1:2,4)]
+
+#Normalize by sum
+rowsums <- rowSums(aceprobut)
+aceprobut <- aceprobut/rowsums
+```
+
+
+Make figure 3A
+```{r}
+
+#Order the samples like in heatmaps
+aceprobut$sample_name <- rownames(aceprobut)
+
+aceprobut.melt <- melt(aceprobut)
+
+aceprobut.melt$sample_name <-factor(aceprobut.melt$sample_name, levels=c("Hyena_1","Jungle_cat_1","Jungle_cat_2","Sand_cat_1","Wolf_1","Wolf_2","Leopard_1","Leopard_2","Lion_1","Lion_2","Lion_3","Tiger_1","Tiger_2","Black_bear_1","Black_bear_2","Brown_bear_1","Brown_bear_2","Brown_bear_3","Brown_bear_4","Brown_bear_5","Coati_1","Coati_3","Coati_4","Coati_5","Coati_6","Coati_7","Coati_8","Af_elephant_1","Af_elephant_2","Af_elephant_3","As_elephant_1","As_elephant_2","As_elephant_3","As_elephant_4","As_elephant_5","Donkey_1","Zebra_1","Zebra_10","Zebra_11","Zebra_12","Zebra_13","Zebra_14","Zebra_15","Zebra_16","Zebra_2","Zebra_3","Zebra_4","Zebra_5","Zebra_6","Zebra_7","Zebra_8","Zebra_9","Rhino_1","Rhino_10","Rhino_11","Rhino_12","Rhino_13","Rhino_2","Rhino_3","Rhino_4","Rhino_5","Rhino_6","Rhino_7","Rhino_8","Rhino_9","Goat_1","Sheep_1","Sheep_2","Sheep_3","Sheep_4","Sheep_5","Gorilla_1","Gorilla_2","Gorilla_3","Gorilla_4","Gorilla_5","Gorilla_6","Chimpanzee_1","Chimpanzee_10","Chimpanzee_11","Chimpanzee_12","Chimpanzee_13","Chimpanzee_4","Chimpanzee_5","Chimpanzee_6","Chimpanzee_7","Chimpanzee_9","Mandarill_1","Mandarill_2","Mandarill_3","Mandarill_4","Mandarill_5","Mandarill_6","Mandarill_7","Mandarill_8","Capuchin_1","Gibbon_1","Gibbon_2","Gibbon_3","Lemur_1","Lemur_2"))
+
+greys <-c("#f0f0f0",
+"#636363",
+"#bdbdbd")
+
+
+##Make the bar plot
+ggplot(aceprobut.melt, aes(x=value, y=sample_name)) +
+  geom_col(aes(fill=variable))+
+  scale_fill_manual(values =greys)
+
+```
+##Fig 3B-D- Boxplots of GCMS metabolites
+
+Create palettes for color (mammalian order) and shape (diet) (colors are from Okabe Ito scale)
+```{r}
+colorlist <- c(
+  
+  "#CC79A7", #Carnivora
+  "#F0E442", #Primates
+   "#009E73", #Perissodactyla
+  "#56B4E9", #Proboscidea
+  "#0072B2" #Artiodactyla
+)
+
+shapelist <- c(
+  15, #Carnivores
+  16,  # Herbivores
+  17  #Omnivores
+  )
+```
+
+Prepare the data for visualization
+```{r}
+
+metadata$Order_diet <-factor(metadata$Order_diet, levels=c("Carnivora_Carnivores",  "Carnivora_Omnivores","Primates_Herbivores","Primates_Omnivores",      
+"Perissodactyla_Herbivores","Proboscidea_Herbivores","Artiodactyla_Herbivores")) 
+
+metadata$HostOrder <-factor(metadata$HostOrder, levels=c("Carnivora","Primates",      
+"Perissodactyla","Proboscidea","Artiodactyla")) 
+
+metab <- as(otu_table(ps_gcms), "matrix")
+```
+
+For lactate and succinate, we will use both the diet and the order on the x axis to show the split within Carnivora
+```{r}
+##Select the metabolite you want to visualize
+
+#Lactate 36_RT4.35_BAL100
+#Succinate 228_RT11.13_BAL100
+
+##Example: lactate
+metabolite <-metab[,"36_RT4.35_BAL100"]
+
+ggplot(metadata, aes(x=Order_diet, y=metabolite, color=HostOrder)) +
+  theme_bw(base_size=15)+
+  geom_point(aes(col = HostOrder, shape=diet), size=2.5, position="jitter") +
+  geom_boxplot(color = "black", outlier.shape=NA, fill=NA) + 
+  labs(title= "", x = "", y = "") +
+ theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.text.x=element_blank()) +
+  scale_colour_manual(values = colorlist) +
+  scale_shape_manual(values = shapelist)
+
+```
+
+Anova:
+
+```{r}
+# Compute the analysis of variance
+res.aov <- aov(metabolite ~ metadata$Order_diet)
+# Summary of the analysis
+summary(res.aov)
+```
+
+If Anova is significant, perform Tukey multiple pairwise comparisons:
+
+```{r}
+TukeyHSD(res.aov)
+```
+
+For panels C and D, we will group by the order on the x axis
+```{r}
+#Cadaverine 531_RT22.1_BAL100
+#5-aminovalerate 442_RT18.22_BAL95
+#Putrescine 485_RT20.31_BAL100
+#3-hydroxyphenylacetic acid 428_RT17.8_BAL100
+
+##Example: cadaverine
+metabolite <-metab[,"531_RT22.1_BAL100"]
+
+ggplot(metadata, aes(x=HostOrder, y=metabolite, color=HostOrder)) +
+  theme_bw(base_size=15)+
+  geom_point(aes(col = HostOrder, shape=diet), size=2.5, position="jitter") +
+  geom_boxplot(color = "black", outlier.shape=NA, fill=NA) + 
+  labs(title= "", x = "", y = "") +
+ theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.text.x=element_blank()) +
+  scale_colour_manual(values = colorlist) +
+  scale_shape_manual(values = shapelist)
+
+
+
+```
+Anova:
+
+```{r}
+# Compute the analysis of variance
+res.aov <- aov(metabolite ~ metadata$HostOrder)
+# Summary of the analysis
+summary(res.aov)
+```
+
+If Anova is significant, perform Tukey multiple pairwise comparisons:
+
+```{r}
+TukeyHSD(res.aov)
+```
+
+Fig S16 and S17: PICRUSt2 analysis figures in the SI
+
+```{r}
+# PICRUSt data
+ps_picrust <- readRDS("Phyloseq_files/ps_picrust.rds")
+
+metab <- t(as(otu_table(ps_picrust), "matrix"))
+
+#Fig S16:
+#KEGG acrylate pathway enzyme K01026
+#Fig S17:
+# KEGG lysine decarboxylase K01582
+# KEGG aminoaldehyde dehydrogenase K00137
+# KEGG 5-aminovalerate aminotransferase K07250
+#	KEGG ornithine to putrescine K01581
+
+##Example: cadaverine
+metabolite <-metab[,"K01026"]
+
+##Then repeat above steps to make boxplots
+
+```
+
+
+##SCFA Boxplots in SI:
+
+Fig S15A (by SCFA)
+```{r}
+#Melt the phyloseq object
+ps_scfa.m <- psmelt(ps_scfa)
+
+ps_scfa.m$HostOrder <-factor(ps_scfa.m$HostOrder, levels=c("Carnivora","Primates",      
+"Perissodactyla","Proboscidea","Artiodactyla"))
+
+
+ggplot(ps_scfa.m, aes(x=HostOrder, y=Abundance)) +
+theme_bw(base_size=15)+
+facet_wrap(vars(OTU), scales="free", nrow=2) +
+geom_point(aes(col = HostOrder, shape = diet), size=2, position="jitter") +
+geom_boxplot(color = "black", outlier.shape=NA, fill=NA) +
+scale_colour_manual(values = colorlist) +
+scale_shape_manual(values = shapelist) +
+labs(title= "", x = "", y = "Concentration (mmol/kg feces)")+ 
+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.text.x=element_blank())
+
+```
+Fig S15B (by Order)
+```{r}
+#Subset dataset
+
+ps_aceprobut.m <- subset(ps_scfa.m, OTU=="Acetate"|OTU=="Propionate"|OTU=="Butyrate")
+
+ps_aceprobut.m$OTU <-factor(ps_aceprobut.m$OTU, levels=c("Acetate","Propionate",      
+"Butyrate"))
+
+
+ggplot(ps_aceprobut.m, aes(x=OTU, y=Abundance)) +
+theme_bw(base_size=15)+
+facet_wrap(vars(HostOrder, diet), scales="free", nrow=2) +
+geom_point(aes(col = HostOrder, shape = diet), size=2, position="jitter") +
+geom_boxplot(color = "black", outlier.shape=NA, fill=NA) +
+scale_colour_manual(values = colorlist) +
+scale_shape_manual(values = shapelist) +
+labs(title= "", x = "", y = "Concentration (mmol/kg feces)")+ 
+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+scale_x_discrete(labels=c("Acetate" = "Ace", "Propionate" = "Pro",
+                              "Butyrate" = "But"))
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
