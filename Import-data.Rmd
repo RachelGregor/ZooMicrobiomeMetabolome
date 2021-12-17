@@ -1,0 +1,412 @@
+---
+title: "Phyloseq object generation"
+output: html_notebook
+---
+
+
+These are the scripts used to import the metabolomics and sequencing data from previous pipelines, and make phyloseq files for further analysis. 
+
+Load packages
+```{r}
+
+rm(list=ls()) #clear workspace
+
+library(phyloseq)
+library(vegan)
+library(ggplot2)
+library(ade4)
+library(magrittr)
+library(dplyr)
+library(reshape2)
+library(ape)
+```
+
+
+Load full metadata file and name by samples
+```{r}
+metadata_full <- read.delim("metadata.txt", header = T, sep = "") ## load metadata file
+
+rownames(metadata_full) <-metadata_full$sample_name
+```
+
+
+
+###For LC-MS/MS metabolomics
+
+Import the MZmine output. 
+
+```{r}
+## read peak features table (csv file from Mzmine):
+metab_table_full <- read.delim("Data_for_import/lcms-mzmine_quant.txt", header = TRUE, check.names=F, row.names=1)
+
+#Give names to the peak features and trim table to only include peak areas
+
+feature_names <-round(metab_table_full[,1:2], digits=3)
+feature_names$concatenate <- paste0(1:nrow(feature_names),"_",feature_names[,1],"_",feature_names[,2])
+
+metab_table <- metab_table_full[ ,grepl("Peak area", names(metab_table_full))] ### take only columns of "Peak area"
+StrSplitList <- strsplit(colnames(metab_table), split = " ") ### cut out "Peak area"
+colnames(metab_table) <- matrix(unlist(StrSplitList), nrow = length(StrSplitList), byrow = T)[,1] ### give new names for columns
+rownames(metab_table) <-feature_names$concatenate
+dim(metab_table)
+```
+
+
+Trim the metadata to the polar LC-MS files only
+
+```{r}
+metadata <- metadata_full
+metadata <- metadata[!is.na(metadata$File_polar), ]
+```
+
+```{r}
+
+metab_table <- metab_table[,match(metadata$File_polar, colnames(metab_table))] ## sort table columns by metadata order (takes only samples listed in metadata!)
+metab_table <- t(metab_table) 
+rownames(metab_table) <- metadata$sample_name ##Give the samples more informative names
+
+rownames(metab_table)
+
+```
+
+Open the GNPS polar output, and give the rownames new peak feature names
+
+```{r}
+GNPS_full <- read.delim("Data_for_import/lcms-GNPS_ID_file.txt", header = T, sep = "") ## load metadata file
+
+dim(GNPS_full)
+
+rownames(GNPS_full) <-feature_names$concatenate
+
+#Check the end of the file manually to make sure no lines were skipped
+tail(GNPS_full, n=5)
+
+
+```
+
+
+Make subsets for peak features only appearing in feces or only in food. This is based on the cutoff set for the peak area in MZmine
+```{r}
+GNPS_fecal <- t(subset(GNPS_full, ATTRIBUTE_SampleType == "Feces"))
+GNPS_food <- t(subset(GNPS_full, ATTRIBUTE_SampleType == "Food"))
+GNPS_dietder <- t(subset(GNPS_full, ATTRIBUTE_SampleType == "Feces,Food"))
+
+dim(GNPS_fecal)
+dim(GNPS_food)
+dim(GNPS_dietder)
+
+```
+
+
+Normalization by internal standard, ampicillin. This peak feature was found based on its mass and rt of 350.11 and approximately 2.93 minutes, and is the first peak feature of the output. 
+```{r}
+
+metadata$int.std <- metab_table[,1]
+##The methanol blanks did not contain any ISTD. I manually added in a value based on the averages of the fecal and food samples respectively, just to get a ballpark figure for the relative peak intensities there. 
+
+##Look at the distribution of the internal standard values
+range(metadata$int.std)
+mean(metadata$int.std)
+hist(metadata$int.std)
+
+metab_table_norm <- sweep(metab_table, MARGIN=1, metadata$int.std, FUN="/") ##divide by ISTD for normalization
+
+##Check that worked as anticipated
+metab_table_norm[,1]
+
+metab_table <- metab_table_norm
+
+
+
+#remove any peak features that are zero in all samples
+
+metab_table2 <- metab_table[, colSums(metab_table) > 0] 
+dim(metab_table2)
+
+##log transform all values log(x+1)
+
+
+metab_table2 <- metab_table2+1
+
+metab_table2 <- log(metab_table2)
+
+```
+
+
+Make phyloseq object
+```{r}
+ps_polar_all <- phyloseq(otu_table(metab_table2, taxa_are_rows=F), 
+               sample_data(metadata))
+
+ps_polar_all
+
+#saveRDS(ps_polar_all, "ps_polar_all.rds")
+```
+
+
+Subset to only fecal samples
+```{r}
+metadata <- subset(metadata, Type=="Feces")
+metadata <- droplevels(metadata)
+
+##first take only fecal samples, not food
+metab_fecal <- metab_table2[match(metadata$sample_name, rownames(metab_table2)),]
+dim(metab_fecal)
+
+metab_fecal2 <- metab_fecal[, colSums(metab_fecal) > 0]
+dim(metab_fecal2)
+```
+
+Make phyloseq object for fecal samples with all peak features (including those that appear in dietary samples)
+```{r}
+ps_polar_feces_all <- phyloseq(otu_table(metab_fecal2, taxa_are_rows=F), 
+               sample_data(metadata))
+
+ps_polar_feces_all
+
+#saveRDS(ps_polar_feces_all, "ps_polar_feces_all.rds")
+```
+
+Now take only peak features that appear in the feces and not the dietary samples. This is the file that was used for the analyses in the paper. 
+```{r}
+
+metab_fecal <- metab_fecal[,match(colnames(GNPS_fecal), colnames(metab_fecal))] 
+
+dim(metab_fecal)
+
+ps_pol <- phyloseq(otu_table(metab_fecal, taxa_are_rows=F), 
+               sample_data(metadata))
+ps_pol
+
+#saveRDS(ps_pol, "ps_pol.rds")
+```
+
+
+
+###For 16S results 
+
+The sequencing files were processed using the DADA2 pipeline as detailed in the methods, according to the DADA2 tutorial, resulting in this abundance table. Taxonomy was assigned using SILVA. 
+```{r}
+##Load abundance table
+asv_abundance <- readRDS("Data_for_import/seqtab_nochim_101samples.RDS")
+
+##Drop all ASVs with an abundance of fewer than 3 reads
+asv_abundance <- asv_abundance[,colSums(asv_abundance)>3]
+dim(asv_abundance)
+
+##Load taxonomy table
+load(file = "Data_for_import/taxa.RData")
+dim(taxa)
+rownames(taxa)[1:5]
+##Subset to just relevant samples
+taxa <- taxa[which(rownames(taxa) %in% colnames(asv_abundance)),]
+dim(taxa)
+dim(asv_abundance)
+
+##Load tree file, which was created from ASV sequences using FastTree
+tree <- read.tree("Data_for_import/asv_seqs.tre")
+
+##Trim metadata to just fecal samples
+
+metadata <- subset(metadata_full, Type=="Feces")
+
+## Generating phyloseq object
+
+setdiff(rownames(taxa),colnames(asv_abundance))
+
+##Change names to a numbered index to match tree tips. The order is the same since all files were generated together. 
+rownames(taxa) <- 1:nrow(taxa)
+colnames(asv_abundance) <- 1:ncol(asv_abundance)
+ps_asv <- phyloseq(otu_table(asv_abundance, taxa_are_rows = FALSE),tax_table(taxa),sample_data(metadata),phy_tree(tree))
+
+#saveRDS(ps_asv,"ps_asv.RDS")
+```
+
+
+###For GCMS
+
+```{r}
+
+##GNPS output file
+
+metab_table_full <- read.delim("Data_for_import/gcms-GNPS_quant.txt", header = TRUE, check.names=F, row.names=1)
+
+dim(metab_table_full)
+
+metab_table <- metab_table_full
+
+##Features were filtered based on the balance scores from a separate file from GNPS. This file was already filtered to only include balance scores of at least 50
+balance_filter <- read.csv("Data_for_import/gcms-balance-scores.csv", header = TRUE, check.names=F, row.names=1)
+
+metab_table <- metab_table[match(rownames(balance_filter),rownames(metab_table)),]
+
+dim(metab_table)
+
+```
+
+
+Give names to the metabolites and cut out peak areas from metab table
+```{r}
+##make names using balance filter sheet
+balance_filter$concatenate<-paste0(rownames(balance_filter),"_RT",balance_filter[,1],"_BAL",balance_filter[,2])
+
+metab_table <- metab_table[ ,grepl("Peak area", names(metab_table))] ### take only columns of "Peak area"
+StrSplitList <- strsplit(colnames(metab_table), split = " ") ### cut out "Peak area"
+colnames(metab_table) <- matrix(unlist(StrSplitList), nrow = length(StrSplitList), byrow = T)[,1] ### give new names for columns
+
+rownames(metab_table) <-balance_filter$concatenate
+
+
+``` 
+
+
+Limit the metadata to the GCMS files and give informative sample names
+
+```{r}
+metadata <- metadata_full[metadata_full$File_GCMS %in% colnames(metab_table),]
+
+metadata <- droplevels(metadata)
+
+metab_table <- t(metab_table) 
+rownames(metab_table) <- metadata$sample_name ##Give the samples more informative names
+
+dim(metab_table)
+
+range(metab_table)
+
+```
+
+
+Normalization by ISTD, ribitol. This was externally identified to be peak feature 483, with an RT of 20.1 min
+```{r}
+metadata$int.std <- metab_table[,"483_RT20.1_BAL100"]
+
+
+range(metadata$int.std)
+mean(metadata$int.std)
+hist(metadata$int.std)
+
+metab_table_norm <- sweep(metab_table, MARGIN=1, metadata$int.std, FUN="/") ##divide by ISTD for normalization
+
+##check
+metab_table_norm[,10]
+metab_table_norm[,"483_RT20.1_BAL100"]
+
+metab_table <- metab_table_norm
+
+range(metab_table)
+```
+Set a cutoff for very small peak areas and log transform: log(x+1)
+
+```{r}
+
+metab_table2 <-metab_table
+
+metab_table2[metab_table2<0.01] <- 0
+
+metab_table2 <- metab_table2[, colSums(metab_table2) > 0] #remove any variables that are all zero
+
+dim(metab_table2)
+
+metab_table2 <- metab_table2+1
+
+metab_table2 <- log(metab_table2)
+
+metab_table <- metab_table2
+
+
+```
+
+Make PS object with all samples
+
+```{r}
+ps_gcms_all <- phyloseq(otu_table(metab_table, taxa_are_rows=F), 
+               sample_data(metadata))
+
+
+#saveRDS(ps_gcms_all, "ps_gcms_all.rds")
+```
+
+
+
+Make phyloseq object for fecal samples only
+```{r}
+ps_gcms <- subset_samples(ps_gcms_all, Type=="Feces")
+
+##remove peak features which are zero in all fecal samples
+feces <- as(otu_table(ps_gcms), "matrix")
+
+feces <- feces[, colSums(feces) !=0]
+
+metadata <- subset(metadata, Type=="Feces")
+metadata <- droplevels(metadata)
+
+##make sure sample order matches metadata order
+feces <- feces[match(metadata$sample_name, rownames(feces)),]
+
+ps_gcms <- phyloseq(otu_table(feces, taxa_are_rows=F), 
+               sample_data(metadata))
+
+
+```
+
+Which peaks appear only in dietary compounds?
+
+```{r}
+
+ps <- subset_samples(ps_gcms_all, Type =="Food")
+food <- as(otu_table(ps), "matrix")
+
+ps <- subset_samples(ps_gcms_all , Type=="Feces")
+feces <- as(otu_table(ps), "matrix")
+
+ifood <- colSums(food) !=0
+ifeces <- colSums(feces) !=0
+
+foodnonzero <- food[, ifood]
+foodzero <- food[, !ifood]
+
+fecesnonzero <- feces[, ifeces]
+feceszero <- feces[, !ifeces]
+
+#Appears in feces but not food
+setdiff(colnames(fecesnonzero),colnames(foodnonzero))
+```
+
+```{r}
+
+#Appears in food but not feces
+setdiff(colnames(foodnonzero),colnames(fecesnonzero))
+
+
+```
+
+
+
+
+###Ensure that sample order matches
+
+Samples need to be all in the same order for the Mantel test comparisons. Make sure that they are before continuing using match. 
+
+```{r}
+asv <- as(otu_table(ps_asv), "matrix")
+pol <- as(otu_table(ps_pol), "matrix")
+gcms <- as(otu_table(ps_gcms), "matrix")
+
+metadata <-subset(metadata_full, Type=="Feces")
+metadata <- droplevels(metadata)
+
+match(metadata$sample_name, rownames(pol))
+match(metadata$sample_name, rownames(asv))
+match(metadata$sample_name, rownames(gcms))
+
+```
+
+
+
+
+
+
+
+
+
